@@ -11,8 +11,8 @@
 
 namespace SoftTechProject\Controller;
 
-use SoftUniBlogBundle\Entity\User;
-use SoftUniBlogBundle\Form\UserType;
+use SoftTechProject\Entity\User;
+use SoftTechProject\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
