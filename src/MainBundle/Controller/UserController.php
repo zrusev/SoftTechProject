@@ -1,14 +1,10 @@
 <?php
 
-namespace SoftTechProject\Controller;
+namespace MainBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use MainBundle\Entity\User;
+use MainBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use SoftTechProject\Entity\User;
-use SoftTechProject\Entity\Role;
-use SoftTechProject\Form\UserType;
-use SoftTechProject\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,13 +17,10 @@ class UserController extends Controller
      */
     public function registerAction(Request $request)
     {
-        // 1) build the form
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
-        // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             // 3) Encode the password (you could also do this via Doctrine listener)
@@ -36,10 +29,6 @@ class UserController extends Controller
             $user->setPassword($password);
 
             // 4) save the User!
-            $role = $this->getDoctrine()->getRepository(Role::class)->findOneBy(['name' => 'ROLE_USER']);
-
-            $user->addRole($role);
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
@@ -56,13 +45,5 @@ class UserController extends Controller
         );
     }
 
-    /**
-     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
-     * @Route("/profile", name="user_profile")
-     */
-    public function profileAction()
-    {
-        $user = $this->getUser();
-        return $this->render("user/profile.html.twig", ['user'=>$user]);
-    }
+
 }

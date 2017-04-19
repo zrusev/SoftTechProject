@@ -1,14 +1,14 @@
 <?php
-namespace SoftTechProject\Form;
 
+namespace MainBundle\Form;
+
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 
 class UserType extends AbstractType
 {
@@ -28,7 +28,12 @@ class UserType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'SoftTechProject\Entity\User',
+            'data_class' => 'MainBundle\Entity\User',
         ));
+    }
+
+    public function getBlockPrefix()
+    {
+        return 'main_bundle_user_type';
     }
 }

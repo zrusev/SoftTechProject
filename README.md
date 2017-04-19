@@ -1,2 +1,4 @@
-# SoftTechProject
-Practical Project Assignment for the Software Technologies Course @ SoftUni (Design and implement a simple Web-based application)
+.checkout
+=========
+
+A Symfony project created on April 19, 2017, 7:47 pm.

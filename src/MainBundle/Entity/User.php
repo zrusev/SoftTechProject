@@ -1,17 +1,15 @@
 <?php
 
-namespace SoftTechProject\Entity;
+namespace MainBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-
 
 /**
  * User
  *
- * @ORM\Table(name="users")
- * @ORM\Entity(repositoryClass="SoftTechProject\Repository\UserRepository")
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="MainBundle\Repository\UserRepository")
  */
 class User implements UserInterface
 {
@@ -27,7 +25,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=100, unique=true)
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
 
@@ -45,41 +43,6 @@ class User implements UserInterface
      */
     private $password;
 
-    /**
-     * @var ArrayCollection
-     *
-     * @ORM\OneToMany(targetEntity="SoftTechProject\Entity\Article", mappedBy="author")
-     */
-    private $articles;
-
-    /**
-     * @var ArrayCollection
-     *
-     * @ORM\ManyToMany(targetEntity="SoftTechProject\Entity\Role")
-     * @ORM\JoinTable(name="users_roles",
-     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")})
-     */
-    private $roles;
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public  function  getArticles()
-    {
-        return $this->articles;
-    }
-
-    /**
-     * @param Article $article
-     * @return User
-     */
-    public function addPost(Article $article)
-    {
-        $this->articles[] = $article;
-
-        return $this;
-    }
 
     /**
      * Get id
@@ -181,14 +144,7 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        $stringRoles = [];
-        foreach ($this->roles as $role)
-        {
-            /** @var $role Role */
-            $stringRoles[]= $role->getRole();
-        }
-
-        return $stringRoles;
+        return ['ROLE_USER'];
     }
 
     /**
@@ -222,39 +178,6 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
-    }
-
-    /**\
-     * @param Role $role
-     * @return User
-     */
-    public function  addRole($role)
-    {
-        $this->roles[] = $role;
-        return $this;
-    }
-
-    /**
-     * @param Article $article
-     * @return bool
-     */
-    public function isAuthor($article)
-    {
-        return $article->getAuthorId() == $this->getId();
-    }
-
-    /**
-     * @return bool
-     */
-    public function isAdmin()
-    {
-        return in_array("ROLE_ADMIN", $this->getRoles());
-    }
-
-    public  function  __construct()
-    {
-        $this->articles = new ArrayCollection();
-        $this->roles = new ArrayCollection();
     }
 
     function __toString()
