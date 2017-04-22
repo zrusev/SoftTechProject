@@ -18,6 +18,7 @@
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- Theme CSS -->
     <link href="{{ asset('css/grayscale.css') }}" rel="stylesheet">
@@ -53,16 +54,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">WHAT IS GRAPHOOO</a>
+                    <a class="page-scroll" href="#about">WHY GRAPHOOO</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#download">HOW TO START</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">SIGN UP</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="">LOG IN</a>
+                    <a class="page-scroll" href="#contact">SIGN IN</a>
                 </li>
             </ul>
         </div>
@@ -70,23 +68,6 @@
     </div>
     <!-- /.container -->
 </nav>
-
-<!-- Intro Header -->
-<header class="intro">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <p class="intro-text">Writers' friendly corner
-                        <br>where thoughts become reality</p>
-                    <a href="#about" class="btn btn-circle page-scroll">
-                        <i class="fa fa-angle-double-down animated"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
 {% block main %}
 
@@ -113,6 +94,9 @@
 
 <!-- Theme JavaScript -->
 <script src="{{ asset('js/grayscale.min.js') }}"></script>
+
+<!-- Log in/ Log out action -->
+<script src="{{ asset('js/index.js') }}"></script>
 
 </body>
 

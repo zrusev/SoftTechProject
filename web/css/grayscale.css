@@ -220,6 +220,10 @@ a:focus {
 .content-section {
   padding-top: 100px;
 }
+.content-section-log {
+  padding: 5px;
+  background: rgba(92, 92, 92, 0.3);
+}
 .download-section {
   width: 100%;
   padding: 50px 0;

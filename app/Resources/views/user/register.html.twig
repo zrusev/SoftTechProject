@@ -3,7 +3,8 @@
 {% block body_id 'register' %}
 
 {% block main %}
-    <div class="container body-content span=8 offset=2">
+<section class="container content-section text-center">
+    <div class="col-lg-8 col-lg-offset-2">
         <div class="well">
             <form class="form-horizontal" action="{{ path('user_register') }}" method="post">
                 <fieldset>
@@ -44,4 +45,5 @@
             </form>
         </div>
     </div>
+</section>
 {% endblock %}
