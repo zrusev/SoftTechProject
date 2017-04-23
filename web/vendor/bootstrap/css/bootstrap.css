@@ -1264,11 +1264,11 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 30px;
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 26px;
 }
 h3,
 .h3 {
@@ -1582,8 +1582,8 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: auto;
+  padding-left: auto;
   margin-right: auto;
   margin-left: auto;
 }

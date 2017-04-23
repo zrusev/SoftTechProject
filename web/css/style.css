@@ -8,7 +8,7 @@ html {
 
 body {
   background: #c1bdba;
-  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -27,7 +27,7 @@ a:hover {
   max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(92, 92, 92, 0.3);
+  /*box-shadow: 0 4px 10px 4px rgba(92, 92, 92, 0.3);*/
 }
 
 .tab-group {
@@ -78,13 +78,14 @@ label {
   position: absolute;
   -webkit-transform: translateY(6px);
           transform: translateY(6px);
-  left: 13px;
+  left: 10px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
-  font-size: 18px;
+  font-size: 12px;
+  top:5px;
 }
 label .req {
   margin: 2px;
@@ -106,11 +107,11 @@ label.highlight {
 }
 
 input, textarea {
-  font-size: 20px;
+  font-size: 18px;
   display: block;
   width: 100%;
   height: 100%;
-  padding: 5px 10px;
+  padding: 7px 10px;
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
@@ -174,5 +175,6 @@ textarea {
 
 .forgot {
   margin-top: -20px;
+  margin-bottom: 20px;
   text-align: right;
 }

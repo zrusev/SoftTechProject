@@ -8,16 +8,26 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <p class="intro-text">Writers' friendly corner
-                                <br>#LoveToRead</p>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
+                            <p class="intro-text"><h1>Writers' friendly corner</h1>
+                            <h3>#LoveToRead
+                                <a href="#about" class="btn btn-circle page-scroll">
+                                    <i class="fa fa-angle-double-down animated"></i>
+                                </a>
+                            </h3>
+                            </p>
+
+                            <div>
+                                <a href="#contact">
+                                    <button class="btn btn-default btn-lg">TRY GRAPHOO</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+
+        <section class="content-middle"></section>
 
         <!-- About Section -->
         <section id="about" class="container content-section text-center">
@@ -32,18 +42,21 @@
             </div>
         </section>
 
-        <!-- Download Section -->
+        <section class="content-middle"></section>
+
+        <!-- Start Section -->
         <section id="download" class="content-section text-center">
             <div class="download-section">
                 <div class="container">
                     <div class="col-lg-8 col-lg-offset-2">
                         <h2>Download Grayscale</h2>
                         <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                        <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="content-middle"></section>
 
         <!-- Log in/Log out Section -->
         <section id="contact" class="content-section-log">
@@ -70,7 +83,7 @@
                                     <label>
                                         Last Name<span class="req">*</span>
                                     </label>
-                                    <input type="text"required autocomplete="off"/>
+                                    <input type="text" required autocomplete="off"/>
                                 </div>
                             </div>
 
@@ -78,17 +91,17 @@
                                 <label>
                                     Email Address<span class="req">*</span>
                                 </label>
-                                <input type="email"required autocomplete="off"/>
+                                <input type="email" required autocomplete="off"/>
                             </div>
 
                             <div class="field-wrap">
                                 <label>
                                     Set A Password<span class="req">*</span>
                                 </label>
-                                <input type="password"required autocomplete="off"/>
+                                <input type="password" required autocomplete="off"/>
                             </div>
 
-                            <button type="submit" class="button button-block"/>Get Started</button>
+                            <button type="submit" class="button button-block">Get Started</button>
 
                         </form>
                     </div>
@@ -102,22 +115,24 @@
                                 <label>
                                     Email Address<span class="req">*</span>
                                 </label>
-                                <input type="email"required autocomplete="off"/>
+                                <input type="email" required autocomplete="off"/>
                             </div>
 
                             <div class="field-wrap">
                                 <label>
                                     Password<span class="req">*</span>
                                 </label>
-                                <input type="password"required autocomplete="off"/>
+                                <input type="password" required autocomplete="off"/>
                             </div>
 
-                            <p class="forgot"><a href="#">Forgot Password?</a></p>
+                            <div class="forgot"><a href="#">Forgot Password?</a></div>
 
-                            <button class="button button-block"/>Log In</button>
+                            <button class="button button-block">Log In</button>
 
                         </form>
                     </div>
+                </div>
+            </div>
         </section>
 
     {% endblock %}
