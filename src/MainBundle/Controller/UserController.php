@@ -5,6 +5,7 @@ namespace MainBundle\Controller;
 use MainBundle\Entity\User;
 use MainBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -45,5 +46,14 @@ class UserController extends Controller
         );
     }
 
+    /**
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @Route("/profile", name="user_profile")
+     */
+    public function profileAction()
+    {
+        $user = $this->getUser();
+        return $this->render("user/profile.html.twig", ['user'=>$user]);
+    }
 
 }
