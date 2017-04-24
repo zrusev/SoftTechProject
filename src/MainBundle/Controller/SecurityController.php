@@ -2,16 +2,21 @@
 
 namespace MainBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use MainBundle\Entity\User;
+use MainBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class SecurityController extends Controller
 {
     /**
      * @Route("/login", name="security_login")
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @Method({"GET", "POST"})
      */
-    public function login()
+    public function loginAction()
     {
         return $this->render('security/login.html.twig');
     }

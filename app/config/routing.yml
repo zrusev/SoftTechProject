@@ -8,3 +8,7 @@ app:
 post:
     resource: "@MainBundle/Controller/DefaultController.php"
     type:     annotation
+
+# app/config/routing.yml
+logout:
+    path: /logout
