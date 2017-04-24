@@ -61,6 +61,7 @@
         <!-- Log in/Log out Section -->
         <section id="contact" class="content-section-log">
             <div class="form">
+
                 <ul class="tab-group">
                     <li class="tab active"><a href="#signup">Sign Up</a></li>
                     <li class="tab"><a href="#login">Log In</a></li>
@@ -69,48 +70,46 @@
                 <div class="tab-content">
                     <div id="signup">
                         <h1>Sign Up for Free</h1>
-                        <form action="{{ path('user_register') }}" method="post">
+                        <form action="{{ path('homepage') }}" method="post">
+                            <fieldset>
+                                <div class="field-wrap">
+                                    <label for="user_email">
+                                        Email Address<span class="req">*</span>
+                                    </label>
+                                    <input type="email" required autocomplete="off" id="user_email" name="user[email]">
+                                </div>
 
-                            <div class="top-row">
                                 <div class="field-wrap">
                                     <label for="user_fullName">
-                                        First Name<span class="req">*</span>
+                                        Full Name<span class="req">*</span>
                                     </label>
-                                    <input type="text" required autocomplete="off" id="user_fullName" name="user[fullName]"/>
+                                    <input type="text" id="user_fullName" name="user[fullName]" required autocomplete="off">
                                 </div>
 
                                 <div class="field-wrap">
-                                    <label>
-                                        Last Name<span class="req">*</span>
+                                    <label for="user_password_first">
+                                        Set A Password<span class="req">*</span>
                                     </label>
-                                    <input type="text" required autocomplete="off"/>
+                                    <input type="password" id="user_password_first" name="user[password][first]" required autocomplete="off">
                                 </div>
-                            </div>
 
-                            <div class="field-wrap">
-                                <label for="user_email">
-                                    Email Address<span class="req">*</span>
-                                </label>
-                                <input type="email" required autocomplete="off" id="user_email" name="user[email]"/>
-                            </div>
+                                <div class="field-wrap">
+                                    <label for="user_password_second">
+                                        Confirm The Password<span class="req" >*</span>
+                                    </label>
+                                    <input type="password" id="user_password_second" name="user[password][second]" required autocomplete="off">
+                                </div>
 
-                            <div class="field-wrap">
-                                <label>
-                                    Set A Password<span class="req" for="user_password_first">*</span>
-                                </label>
-                                <input type="password" required autocomplete="off" id="user_password_first" name="user[password]"/>
-                            </div>
-
-                            <button type="submit" class="button button-block">Get Started</button>
-
+                                <button type="submit" class="button button-block">Get Started</button>
+                                {{  form_row(form._token) }}
+                            </fieldset>
                         </form>
-
                     </div>
 
                     <div id="login">
                         <h1>Welcome Back!</h1>
 
-                        <form name="authenticate" action="{{ path('security_login') }}" method="post">
+                        <form name="authenticate" action="{{ path('homepage') }}" method="post">
 
                             <div class="field-wrap">
                                 <label>

@@ -1,3 +1,10 @@
 app:
     resource: '@MainBundle/Controller/'
     type: annotation
+
+# app/config/routing.yml
+
+# import routes from a controller class
+post:
+    resource: "@MainBundle/Controller/DefaultController.php"
+    type:     annotation
