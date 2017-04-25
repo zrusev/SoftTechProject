@@ -2,6 +2,7 @@
 
 namespace MainBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -25,7 +26,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=100, unique=true)
      */
     private $email;
 
@@ -43,6 +44,33 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\Book", mappedBy="author")
+     */
+    private $books;
+
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBooks()
+    {
+        return $this->books;
+    }
+
+    /**
+     * @param Book $bookName
+     *
+     * @return User
+     */
+    public function addBook(Book $bookName)
+    {
+        $this->books[] = $bookName;
+
+        return $this;
+    }
 
     /**
      * Get id
@@ -179,6 +207,12 @@ class User implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
     }
+
+    function __construct()
+    {
+        $this->books = new ArrayCollection();
+    }
+
 
     function __toString()
     {
