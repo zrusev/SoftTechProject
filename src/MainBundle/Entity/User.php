@@ -47,29 +47,24 @@ class User implements UserInterface
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="MainBundle\Entity\Book", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\Chapter", mappedBy="author")
      */
-    private $books;
+    private $chapters;
 
+
+    public function addChapter(Chapter $chapter)
+    {
+        $this->chapters[] = $chapter;
+
+        return $this;
+    }
 
     /**
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getBooks()
+    public function getChapters()
     {
-        return $this->books;
-    }
-
-    /**
-     * @param Book $bookName
-     *
-     * @return User
-     */
-    public function addBook(Book $bookName)
-    {
-        $this->books[] = $bookName;
-
-        return $this;
+        return $this->chapters;
     }
 
     /**
@@ -208,11 +203,11 @@ class User implements UserInterface
         // TODO: Implement eraseCredentials() method.
     }
 
-    function __construct()
-    {
-        $this->books = new ArrayCollection();
-    }
 
+    public function __construct()
+    {
+        $this->chapters = new ArrayCollection();
+    }
 
     function __toString()
     {

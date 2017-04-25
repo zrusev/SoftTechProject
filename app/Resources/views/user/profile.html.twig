@@ -3,13 +3,13 @@
 {% block body_id 'profile' %}
 
 {% block main %}
-    <section class="content-section text-left">
-        <div>
-            EMAIL: {{ user.email }}
-        </div>
-                <br>
-        <div>
-            FULLNAME: {{ user.fullName }}
-        </div>
+    <section class="content-section">
+            <div class="container body-content span=8 offset=2">
+                <div class=class="container content-section text-center">
+                        EMAIL: {{ user.email }}
+                            <br>
+                        FULLNAME: {{ user.fullName }}
+                </div>
+
     </section>
 {% endblock %}

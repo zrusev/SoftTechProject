@@ -2,7 +2,6 @@
 
 namespace MainBundle\Controller;
 
-use MainBundle\Entity\Book;
 use MainBundle\Entity\Chapter;
 use MainBundle\Form\ChapterType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -27,17 +26,15 @@ class ChapterController extends Controller
         $form = $this->createForm(ChapterType::class, $chapter);
 
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid())
         {
-
+            $chapter->setAuthor($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($chapter);
             $em->flush();
 
             return $this->redirectToRoute('homepage');
         }
-
 
         return $this->render('chapter/create.html.twig',
             array('form' => $form->createView()));

@@ -2,6 +2,7 @@
 
 namespace MainBundle\Controller;
 
+use MainBundle\Entity\Chapter;
 use MainBundle\Entity\User;
 use MainBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -42,8 +43,9 @@ class DefaultController extends Controller
 
     }
 
+        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findAllOrdered();
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', array('form' => $form->createView()));
+        return $this->render('default/index.html.twig', ['chapters' => $chapters]);
     }
 
 }

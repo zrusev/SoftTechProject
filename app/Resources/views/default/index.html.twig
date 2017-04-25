@@ -27,6 +27,35 @@
             </div>
         </header>
 
+        <div class="container body-content">
+            <div class="row">
+                {% for chapter in chapters %}
+                    <div class="col-md-6">
+                        <article>
+                            <header>
+                                <h2>{{ chapter.bookTitle }}</h2>
+                            </header>
+
+                            <p>
+                                {{ chapter.summary }}
+                            </p>
+
+                            <small class="author">
+                                {{ chapter.author }}
+                            </small>
+
+                            <footer>
+                                <div class="pull-right">
+                                    <a class="btn btn-default btn-xs"
+                                       href="#">Read more &raquo;</a>
+                                </div>
+                            </footer>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
 
         <!-- Start Section -->
         <section id="download" class="content-section text-center">
