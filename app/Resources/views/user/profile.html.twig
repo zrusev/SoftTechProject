@@ -23,17 +23,21 @@
                     </div>
 
                         {% for chapter in chapters %}
-
-                        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                            <div class="thumbnail">
-                                <header>
-                                    <a href="#">{{ chapter.bookTitle }}</a>
-                                </header>
+                            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                <div class="thumbnail">
+                                    <header>
+                                        <div>{{ chapter.bookTitle }}</div>
+                                    </header>
+                                    <footer>
+                                        <div class="pull-right">
+                                            <a class="btn btn-default btn-xs" href="{{ path('chapter_view', {'id': chapter.id}) }}">Read more &raquo;</a>
+                                        </div>
+                                    </footer>
+                                </div>
                             </div>
-                        </div>
                         {% endfor %}
-
                 </div>
+
             </div>
         </section>
     {% endif %}

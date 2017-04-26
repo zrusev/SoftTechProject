@@ -40,7 +40,7 @@
                                         <div class="col-lg-2 col-md-6 col-xs-6 thumb">
                                             <div class="thumbnail">
                                                 <header>
-                                                    <a href="#">{{ chapter.bookTitle }}</a>
+                                                    {{ chapter.bookTitle }}
                                                 </header>
                                                 <p>
                                                     {{ chapter.chapterTitle }}
@@ -48,13 +48,17 @@
                                                 <small class="autor">
                                                     {{ chapter.author }}
                                                 </small>
+                                                <footer>
+                                                    <div class="pull-right">
+                                                        <a class="btn btn-default btn-xs" href="{{ path('chapter_view', {'id': chapter.id}) }}">Read more &raquo;</a>
+                                                    </div>
+                                                </footer>
                                             </div>
                                         </div>
                                     {% endif %}
                                 {% endfor %}
 
                             </div>
-
                 </div>
         </section>
 

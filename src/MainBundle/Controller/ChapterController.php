@@ -40,4 +40,20 @@ class ChapterController extends Controller
             array('form' => $form->createView()));
 
     }
+
+    /**
+     * @param int $id
+     *
+     * @Route("/chapter/{id}", name="chapter_view")
+     *
+     * @return Response
+     */
+    public function viewChapter($id)
+    {
+        $chapter = $this->getDoctrine()->getRepository(Chapter::class)->find($id);
+
+        return $this->render('chapter/chapter.html.twig',
+            array('chapter' => $chapter));
+
+    }
 }
