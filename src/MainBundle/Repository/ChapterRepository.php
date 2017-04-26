@@ -11,7 +11,7 @@ namespace MainBundle\Repository;
 class ChapterRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function findAllOrdered()
+        public function findAllOrdered()
     {
         $qb = $this->createQueryBuilder('userArticles')
             ->addOrderBy('userArticles.bookTitle')
@@ -19,4 +19,16 @@ class ChapterRepository extends \Doctrine\ORM\EntityRepository
         $query = $qb->getQuery();
         return $query->execute();
     }
+
+
+    public function findCurrentUser()
+    {
+
+        $qb = $this->createQueryBuilder('userArticles')
+            ->addOrderBy('userArticles.bookTitle')
+            ->where('userArticles.authorId = 2');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
+
 }

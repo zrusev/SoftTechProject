@@ -2,8 +2,11 @@
 
 namespace MainBundle\Controller;
 
+use MainBundle\Entity\Chapter;
 use MainBundle\Entity\User;
 use MainBundle\Form\UserType;
+use MainBundle\Repository\ChapterRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -53,7 +56,8 @@ class UserController extends Controller
     public function profileAction()
     {
         $user = $this->getUser();
-        return $this->render("user/profile.html.twig", ['user' => $user]);
+        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findCurrentUser();
+        return $this->render("user/profile.html.twig", array('user' => $user, 'chapters' => $chapters));
     }
 
 }
