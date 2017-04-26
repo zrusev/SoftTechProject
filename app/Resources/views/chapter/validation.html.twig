@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section class="container">
+        <div class="content-section">
+        <h3>The author has the following errors</h3>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+        <footer>
+            {% if app.user %}
+            <div class="pull-left">
+                <a class="btn btn-default btn-xs" href="{{ path('chapter_create') }}">back &raquo;</a>
+            </div>
+            {% else %}
+                <a class="btn btn-default btn-xs" href="{{ path('user_register') }}">back &raquo;</a>
+            {% endif %}
+        </footer>
+        </div>
+    </section>
+{% endblock %}
+

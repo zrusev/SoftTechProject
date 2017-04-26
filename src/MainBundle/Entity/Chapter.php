@@ -3,6 +3,7 @@
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Chapter
@@ -23,6 +24,7 @@ class Chapter
 
     /**
      * @var string
+     * @Assert\NotBlank(message="Please enter title")
      *
      * @ORM\Column(name="bookTitle", type="string", length=255, nullable=false)
      */
@@ -30,6 +32,7 @@ class Chapter
 
     /**
      * @var string
+     * @Assert\NotBlank(message="Please enter chapter")
      *
      * @ORM\Column(name="chapterTitle", type="string", length=255, nullable=false)
      */
@@ -37,6 +40,7 @@ class Chapter
 
     /**
      * @var string
+     * @Assert\NotBlank(message="Please enter content")
      *
      * @ORM\Column(name="content", type="text")
      */

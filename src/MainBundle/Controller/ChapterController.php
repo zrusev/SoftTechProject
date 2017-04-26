@@ -26,8 +26,17 @@ class ChapterController extends Controller
         $form = $this->createForm(ChapterType::class, $chapter);
 
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid())
+        if($form->isSubmitted())
         {
+
+            $validator = $this->get('validator');
+            $errors = $validator->validate($chapter);
+            if (count($errors) > 0) {
+                return $this->render('chapter/validation.html.twig', array(
+                    'errors' => $errors,
+                ));
+            }
+
             $chapter->setAuthor($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($chapter);

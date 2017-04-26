@@ -5,6 +5,7 @@ namespace MainBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -39,6 +40,7 @@ class User implements UserInterface
 
     /**
      * @var string
+     * @Assert\Regex(pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/", message="Use 1 upper case letter, 1 lower case letter, and 1 number for the password")
      *
      * @ORM\Column(name="password", type="string", length=255)
      */

@@ -16,11 +16,13 @@
                             </h3>
                             </p>
 
+                            {% if not app.user %}
                             <div>
                                 <a href="{{ path('user_register') }}">
                                     <button class="btn btn-default btn-lg">TRY GRAPHOO</button>
                                 </a>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
