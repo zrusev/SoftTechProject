@@ -1,43 +1,48 @@
 {% extends 'base.html.twig' %}
 
     {% block main %}
+
                 <section class="content-section">
 
-                        <div class="container body-content span=8 offset=2">
-                            <div class=class="container content-section text-center">
-                                <form class="form-horizontal" action="{{ path('chapter_create') }}" method="POST">
-                                    <fieldset>
-                                        <legend><a>New Chapter</a></legend>
+                    <div class="container body-content span=8 offset=2">
+                        <div class=class="container content-section text-center">
+                        <form class="form-horizontal" action="{{ path('chapter_create') }}" method="POST">
+                            <fieldset>
+                                <legend><a>New Chapter</a></legend>
 
-                                        <div class="form-group">
-                                            <div class="col-sm-4 ">
-                                                <a><input type="text" class="form-control" id="bookTitle" placeholder="Title" name="chapter[bookTitle]"></a>
-                                            </div>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="col-sm-4 ">
+                                        <a><input type="text" class="form-control" id="bookTitle" placeholder="Title" name="chapter[bookTitle]"></a>
+                                    </div>
+                                </div>
 
-                                        <div class="form-group">
-                                            <div class="col-sm-6 ">
-                                                <a><input type="text" class="form-control" id="chapterTitle" placeholder="Subtitle" name="chapter[chapterTitle]"></a>
-                                            </div>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="col-sm-6 ">
+                                        <a><input type="text" class="form-control" id="chapterTitle" placeholder="Chapter" name="chapter[chapterTitle]"></a>
+                                    </div>
+                                </div>
 
-                                        <div class="form-group">
-                                            <div class="col-sm-12">
-                                                <a><textarea class="form-control" rows="20" id="content" placeholder="Begin to write" name="chapter[content]"></textarea></a>
-                                            </div>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <a><textarea class="form-control"  rows="20" id="content" placeholder="Begin to write" name="chapter[content]"></textarea></a>
+                                    </div>
+                                </div>
 
-                                        {{ form_row(form._token) }}
+                                {{ form_row(form._token) }}
 
-                                        <div class="form-group">
-                                            <div class="container body-content span=8 offset=2">
-                                                <a class="btn btn-default" href="{{ path('homepage') }}">Cancel</a>
-                                                <button type="submit" class="btn btn-primary-submit">Submit</button>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
+                                <div class="form-group">
+                                    <div class="container body-content span=8 offset=2">
+                                        <a class="btn btn-default" href="{{ path('homepage') }}">Cancel</a>
+                                        <button type="submit" class="btn btn-primary-submit">Submit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <script>
+                        CKEDITOR.replace( 'chapter[content]' );
+                    </script>
+
                 </section>
     {% endblock %}

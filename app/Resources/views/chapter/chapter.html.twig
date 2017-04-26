@@ -12,11 +12,11 @@
                             </header>
 
                             <p>
-                                {{ chapter.content }}
+                                {{ chapter.content|raw }}
                             </p>
 
                             <small class="author">
-                                {{ chapter.author }}
+                               by {{ chapter.author }}
                             </small>
 
                             <footer>

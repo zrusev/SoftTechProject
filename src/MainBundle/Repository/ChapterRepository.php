@@ -25,6 +25,7 @@ class ChapterRepository extends \Doctrine\ORM\EntityRepository
     {
 
         $qb = $this->createQueryBuilder('userArticles')
+            ->addOrderBy('userArticles.dateAdded', 'DESC')
             ->addOrderBy('userArticles.bookTitle')
             ->where('userArticles.authorId = ' . $user);
         $query = $qb->getQuery();
