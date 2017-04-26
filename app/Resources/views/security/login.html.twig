@@ -5,17 +5,17 @@
 {% block main %}
 
     <!-- Log in/Log out Section -->
-    <section id="contact" class="content-section-log">
+    <section id="securitywindow" class="content-section-log">
         <div class="form">
 
             <ul class="tab-group">
-                <li class="tab active"><a href="#login">Sing In</a></li>
+                <li class="tab active"><a href="#log">Sign In</a></li>
                 <li class="tab"><a href="#signup">Sign Up</a></li>
             </ul>
 
             <div class="tab-content">
 
-                <div id="login">
+                <div id="log">
                     <h1>Welcome Back!</h1>
 
                     <form name="authenticate" action="{{ path('security_login') }}" method="post">
@@ -42,7 +42,7 @@
 
                 <div id="signup">
                     <h1>Sign Up for Free</h1>
-                    <form action="{{ path('user_register') }}" method="post">
+                    <form name="authenticate" action="{{ path('user_register') }}" method="post">
 
                             <div class="field-wrap">
                                 <label for="user_email">
@@ -71,7 +71,7 @@
                                 </label>
                                 <input type="password" id="user_password_second" name="user[password][second]" required autocomplete="off">
                             </div>
-
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
                             <button type="submit" class="button button-block">Get Started</button>
 
                     </form>
