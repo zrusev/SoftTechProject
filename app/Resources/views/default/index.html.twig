@@ -29,25 +29,49 @@
 
         <!-- Start Section -->
         <section id="download" class="content-section text-center">
+            <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>Recently released</h2>
+                    </div>
+                            <div class="col-lg-12">
+
+                                {% for chapter in chapters %}
+                                    {% if loop.index <= 6 %}
+                                        <div class="col-lg-2 col-md-6 col-xs-6 thumb">
+                                            <div class="thumbnail">
+                                                <header>
+                                                    <a href="#">{{ chapter.bookTitle }}</a>
+                                                </header>
+                                                <p>
+                                                    {{ chapter.chapterTitle }}
+                                                </p>
+                                                <small class="autor">
+                                                    {{ chapter.author }}
+                                                </small>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                            </div>
+
+                </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="content-section text-center">
             <div class="download-section">
                 <div class="container">
                     <div class="col-lg-8 col-lg-offset-2">
-                        <h2>Recently released</h2>
+                        <h2>What is Graphoo?</h2>
+                        <p>Find thousands of books to read online.
+                        Turn the pages to explore bygone eras, time-honored tales and historical narratives. Adventure awaits.
+                        Browse categories to find your favorite literature genres: Romance, Fantasy, Thriller, Short Stories, Young Adult and Children’s Books…
+                        There are eBooks for everyone.</p>
                         <p>Explore our most popular and critically acclaimed new and future book releases. Editors have selected some of the most exciting new titles to help you find your next great read. Check back here for regular updates, exclusive content from some of your favourite authors, and new recommendations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="container content-section text-center">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>What is Graphoo?</h2>
-                    <p>Find thousands of books to read online.</p>
-                    <p>Turn the pages to explore bygone eras, time-honored tales and historical narratives. Adventure awaits.</p>
-                    <p>Browse categories to find your favorite literature genres: Romance, Fantasy, Thriller, Short Stories, Young Adult and Children’s Books… </p>
-                    <p>There are eBooks for everyone.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -123,7 +147,7 @@
                                 </div>
 
                                 <button type="submit" class="button button-block">Get Started</button>
-                                {{ form_row(form._token) }}
+
                             </fieldset>
                         </form>
                     </div>

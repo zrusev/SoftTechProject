@@ -33,7 +33,7 @@ class ChapterController extends Controller
             $em->persist($chapter);
             $em->flush();
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('user_profile');
         }
 
         return $this->render('chapter/create.html.twig',

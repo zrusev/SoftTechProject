@@ -14,8 +14,8 @@ class ChapterRepository extends \Doctrine\ORM\EntityRepository
         public function findAllOrdered()
     {
         $qb = $this->createQueryBuilder('userArticles')
-            ->addOrderBy('userArticles.bookTitle')
-            ->where('userArticles.authorId = 2');
+            ->addOrderBy('userArticles.dateAdded', 'DESC')
+            ->addOrderBy('userArticles.bookTitle');
         $query = $qb->getQuery();
         return $query->execute();
     }

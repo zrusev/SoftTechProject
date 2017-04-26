@@ -1133,6 +1133,7 @@ img {
   height: auto;
   padding: 4px;
   line-height: 1.42857143;
+  text-align: left;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
