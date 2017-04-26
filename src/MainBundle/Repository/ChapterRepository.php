@@ -21,12 +21,12 @@ class ChapterRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
-    public function findCurrentUser()
+    public function findCurrentUser($user)
     {
 
         $qb = $this->createQueryBuilder('userArticles')
             ->addOrderBy('userArticles.bookTitle')
-            ->where('userArticles.authorId = 2');
+            ->where('userArticles.authorId = ' . $user);
         $query = $qb->getQuery();
         return $query->execute();
     }

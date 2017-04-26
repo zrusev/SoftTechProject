@@ -56,7 +56,7 @@ class UserController extends Controller
     public function profileAction()
     {
         $user = $this->getUser();
-        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findCurrentUser();
+        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findCurrentUser($user->getID());
         return $this->render("user/profile.html.twig", array('user' => $user, 'chapters' => $chapters));
     }
 
