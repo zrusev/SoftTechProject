@@ -4,6 +4,7 @@ namespace MainBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -12,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="MainBundle\Repository\UserRepository")
+ * @UniqueEntity(fields="email", message="That email is taken!")
  */
 class User implements UserInterface
 {
