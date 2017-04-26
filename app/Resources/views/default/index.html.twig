@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-    {% block main %}
+
+{% block main %}
 
         <!-- Intro Header -->
         <header class="intro">
@@ -16,12 +17,97 @@
                             </h3>
                             </p>
 
+
                             {% if not app.user %}
-                            <div>
-                                <a href="{{ path('user_register') }}">
-                                    <button class="btn btn-default btn-lg">TRY GRAPHOO</button>
-                                </a>
-                            </div>
+                                    <button class="btn btn-default btn-lg" data-target="#loginModal" data-toggle="modal">TRY GRAPHOO</button>
+
+                                    <div class="modal fade" tabindex="-1" id="loginModal" data-keyboard="false" data-backdrop="static">
+                                        <div class="modal-dialog modal-lg">
+
+                                            <div class="form">
+                                                <ul class="tab-group">
+                                                    <li>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </li>
+                                                </ul>
+                                                <ul class="tab-group">
+                                                    <li class="tab active"><a href="#signup">Sign Up</a></li>
+                                                    <li class="tab"><a href="#login">Sign In</a></li>
+                                                </ul>
+
+                                                <div class="tab-content">
+
+                                                    <div id="signup">
+                                                        <h1>Sign Up for Free</h1>
+                                                        <form name="authenticate" action="{{ path('homepage') }}" method="post">
+                                                            <fieldset>
+                                                                <div class="field-wrap">
+                                                                    <label for="user_email">
+                                                                        Email Address<span class="req">*</span>
+                                                                    </label>
+                                                                    <input type="email" required autocomplete="off" id="user_email" name="user[email]">
+                                                                </div>
+
+                                                                <div class="field-wrap">
+                                                                    <label for="user_fullName">
+                                                                        Full Name<span class="req">*</span>
+                                                                    </label>
+                                                                    <input type="text" id="user_fullName" name="user[fullName]" required autocomplete="off">
+                                                                </div>
+
+                                                                <div class="field-wrap">
+                                                                    <label for="user_password_first">
+                                                                        Set A Password<span class="req">*</span>
+                                                                    </label>
+                                                                    <input type="password" id="user_password_first" name="user[password][first]" required autocomplete="off">
+                                                                </div>
+
+                                                                <div class="field-wrap">
+                                                                    <label for="user_password_second">
+                                                                        Confirm The Password<span class="req" >*</span>
+                                                                    </label>
+                                                                    <input type="password" id="user_password_second" name="user[password][second]" required autocomplete="off">
+                                                                </div>
+                                                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                                                                <button type="submit" class="button button-block">Get Started</button>
+                                                            </fieldset>
+                                                        </form>
+                                                    </div>
+
+                                                    <div id="login">
+                                                        <h1>Welcome Back!</h1>
+
+                                                        <form name="authenticate" action="{{ path('security_login') }}" method="post">
+
+                                                            <div class="field-wrap">
+                                                                <label for="user_email">
+                                                                    Email Address<span class="req">*</span>
+                                                                </label>
+                                                                <input type="email" id="user_email" name="_username" required autocomplete="off"/>
+                                                            </div>
+
+                                                            <div class="field-wrap">
+                                                                <label for="password">
+                                                                    Password<span class="req">*</span>
+                                                                </label>
+                                                                <input type="password" id="password" name="_password" required autocomplete="off"/>
+                                                            </div>
+
+                                                            <div class="forgot"><a href="mailto:support@graphoo.com">Forgot Password?</a></div>
+                                                            <div>
+
+
+                                                            </div>
+                                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                                                            <button class="button button-block">Sign In</button>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                             {% endif %}
                         </div>
                     </div>
@@ -35,31 +121,31 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <h2>Recently released</h2>
                     </div>
-                            <div class="col-lg-12">
+                    <div class="col-lg-12">
 
-                                {% for chapter in chapters %}
-                                    {% if loop.index <= 6 %}
-                                        <div class="col-lg-2 col-md-6 col-xs-6 thumb">
-                                            <div class="thumbnail">
-                                                <header>
-                                                    {{ chapter.bookTitle }}
-                                                </header>
-                                                <p>
-                                                    {{ chapter.chapterTitle }}
-                                                </p>
-                                                <small class="autor">
-                                                    by {{ chapter.author }}
-                                                </small>
-                                                <footer>
-                                                    <div class="pull-right">
-                                                        <a class="btn btn-default btn-xs" href="{{ path('chapter_view', {'id': chapter.id}) }}">Read more &raquo;</a>
-                                                    </div>
-                                                </footer>
+                         {% for chapter in chapters %}
+                             {% if loop.index <= 6 %}
+                                  <div class="col-lg-4 col-md-6 col-xs-6 thumb">
+                                       <div class="thumbnail">
+                                           <header>
+                                               {{ chapter.bookTitle }}
+                                            </header>
+                                            <p>
+                                            {{ chapter.chapterTitle }}
+                                            </p>
+                                            <small class="autor">
+                                                by {{ chapter.author }}
+                                            </small>
+                                            <footer>
+                                            <div class="pull-right">
+                                                 <a class="btn btn-default btn-xs" href="{{ path('chapter_view', {'id': chapter.id}) }}">Read more &raquo;</a>
                                             </div>
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
+                                            </footer>
+                                       </div>
+                                  </div>
+                             {% endif %}
+                         {% endfor %}
+                    </div>
             </div>
         </section>
 
@@ -68,12 +154,12 @@
         <section id="about" class="content-section text-center">
             <div class="download-section">
                 <div class="container">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-12">
                         <h2>What is Graphoo?</h2>
-                        <p>Find thousands of books to read online.
-                        Turn the pages to explore bygone eras, time-honored tales and historical narratives. Adventure awaits.
+                        <p>Find thousands of books to read online.</p>
+                        <p>Turn the pages to explore bygone eras, time-honored tales and historical narratives. Adventure awaits.
                         Browse categories to find your favorite literature genres: Romance, Fantasy, Thriller, Short Stories, Young Adult and Children’s Books…
-                        There are eBooks for everyone.</p>
+                        <p>There are eBooks for everyone.</p>
                         <p>Explore our most popular and critically acclaimed new and future book releases. Editors have selected some of the most exciting new titles to help you find your next great read. Check back here for regular updates, exclusive content from some of your favourite authors, and new recommendations.</p>
 
                     </div>
@@ -81,83 +167,4 @@
             </div>
         </section>
 
-{% if not app.user %}
-        <!-- Log in/Log out Section -->
-        <section id="securitywindow" class="content-section-log">
-            <div class="form">
-
-                <ul class="tab-group">
-                    <li class="tab active"><a href="#login">Sign In</a></li>
-                    <li class="tab"><a href="#signup">Sign Up</a></li>
-
-                </ul>
-
-                <div class="tab-content">
-
-                    <div id="login">
-                        <h1>Welcome Back!</h1>
-
-                        <form name="authenticate" action="{{ path('security_login') }}" method="post">
-
-                            <div class="field-wrap">
-                                <label for="user_email">
-                                    Email Address<span class="req">*</span>
-                                </label>
-                                <input type="email" id="user_email" name="_username" required autocomplete="off"/>
-                            </div>
-
-                            <div class="field-wrap">
-                                <label for="password">
-                                    Password<span class="req">*</span>
-                                </label>
-                                <input type="password" id="password" name="_password" required autocomplete="off"/>
-                            </div>
-
-                            <div class="forgot"><a href="#">Forgot Password?</a></div>
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-                            <button class="button button-block">Sign In</button>
-                        </form>
-                    </div>
-
-                    <div id="signup">
-                        <h1>Sign Up for Free</h1>
-                        <form name="authenticate" action="{{ path('homepage') }}" method="post">
-                            <fieldset>
-                                <div class="field-wrap">
-                                    <label for="user_email">
-                                        Email Address<span class="req">*</span>
-                                    </label>
-                                    <input type="email" required autocomplete="off" id="user_email" name="user[email]">
-                                </div>
-
-                                <div class="field-wrap">
-                                    <label for="user_fullName">
-                                        Full Name<span class="req">*</span>
-                                    </label>
-                                    <input type="text" id="user_fullName" name="user[fullName]" required autocomplete="off">
-                                </div>
-
-                                <div class="field-wrap">
-                                    <label for="user_password_first">
-                                        Set A Password<span class="req">*</span>
-                                    </label>
-                                    <input type="password" id="user_password_first" name="user[password][first]" required autocomplete="off">
-                                </div>
-
-                                <div class="field-wrap">
-                                    <label for="user_password_second">
-                                        Confirm The Password<span class="req" >*</span>
-                                    </label>
-                                    <input type="password" id="user_password_second" name="user[password][second]" required autocomplete="off">
-                                </div>
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-                                <button type="submit" class="button button-block">Get Started</button>
-                            </fieldset>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-{% endif %}
-    {% endblock %}
+{% endblock %}

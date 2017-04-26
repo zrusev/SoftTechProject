@@ -23,10 +23,10 @@ a:hover {
 }
 
 .form {
-  background: rgba(92, 92, 92, 0.9);
+  background: #696969;
   padding: 40px;
   max-width: 600px;
-  margin: 40px auto;
+  margin: 100px auto;
   border-radius: 4px;
   /*box-shadow: 0 4px 10px 4px rgba(92, 92, 92, 0.3);*/
 }
