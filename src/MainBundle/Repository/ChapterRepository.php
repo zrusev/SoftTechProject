@@ -32,4 +32,12 @@ class ChapterRepository extends \Doctrine\ORM\EntityRepository
         return $query->execute();
     }
 
+    public function findAllBooks()
+    {
+        $qb = $this->createQueryBuilder('userArticles')
+            ->distinct('userArticles.bookTitle');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
+
 }

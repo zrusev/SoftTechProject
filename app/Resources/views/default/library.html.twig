@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block top %}
+    <a class="navbar-brand page-scroll" href="{{ path{'homepage'}}">
+        <span class="light">GRAPHOOO</span>
+    </a>
+{% endblock %}
+
+{% block li %}
+    <li>
+        <a class="page-scroll" href="#whatsnew">WhAT'S NEW</a>
+    </li>
+    <li>
+        <a class="page-scroll" href="#about">WHY GRAPHOOO</a>
+    </li>
+{% endblock %}
+
+{% block main %}
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p class="intro-text"><h1>Writers' friendly corner</h1>
+                        <h3>#LoveToRead
+                            <a href="#about" class="btn btn-circle page-scroll">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </h3>
+                        </p>
+
+
+                        {% if not app.user %}
+                            <button class="btn btn-default btn-lg" data-target="#loginModal" data-toggle="modal">TRY GRAPHOO</button>
+
+                            <div class="modal fade" tabindex="-1" id="loginModal" data-keyboard="false" data-backdrop="static">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-body">
+                                        <div class="form">
+                                            <ul class="tab-group">
+                                                <li>
+                                                    <button type="button" class="close btn btn-info" data-dismiss="modal">&times;</button>
+                                                </li>
+                                            </ul>
+                                            <ul class="tab-group">
+                                                <li class="tab active"><a href="#signup">Sign Up</a></li>
+                                                <li class="tab"><a href="#login">Sign In</a></li>
+                                            </ul>
+
+                                            <div class="tab-content">
+
+                                                <div id="signup">
+                                                    <h1>Sign Up for Free</h1>
+                                                    <form name="authenticate" action="{{ path('homepage') }}" method="post">
+                                                        <fieldset>
+                                                            <div class="field-wrap">
+                                                                <label for="user_email">
+                                                                    Email Address<span class="req">*</span>
+                                                                </label>
+                                                                <input type="email" required autocomplete="off" id="user_email" name="user[email]">
+                                                            </div>
+
+                                                            <div class="field-wrap">
+                                                                <label for="user_fullName">
+                                                                    Full Name<span class="req">*</span>
+                                                                </label>
+                                                                <input type="text" id="user_fullName" name="user[fullName]" required autocomplete="off">
+                                                            </div>
+
+                                                            <div class="field-wrap">
+                                                                <label for="user_password_first">
+                                                                    Set A Password<span class="req">*</span>
+                                                                </label>
+                                                                <input type="password" id="user_password_first" name="user[password][first]" required autocomplete="off">
+                                                            </div>
+
+                                                            <div class="field-wrap">
+                                                                <label for="user_password_second">
+                                                                    Confirm The Password<span class="req" >*</span>
+                                                                </label>
+                                                                <input type="password" id="user_password_second" name="user[password][second]" required autocomplete="off">
+                                                            </div>
+                                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                                                            <button type="submit" class="button button-block">Get Started</button>
+                                                        </fieldset>
+                                                    </form>
+                                                </div>
+
+                                                <div id="login">
+                                                    <h1>Welcome Back!</h1>
+
+                                                    <form name="authenticate" action="{{ path('security_login') }}" method="post">
+
+                                                        <div class="field-wrap">
+                                                            <label for="user_email">
+                                                                Email Address<span class="req">*</span>
+                                                            </label>
+                                                            <input type="email" id="user_email" name="_username" required autocomplete="off"/>
+                                                        </div>
+
+                                                        <div class="field-wrap">
+                                                            <label for="password">
+                                                                Password<span class="req">*</span>
+                                                            </label>
+                                                            <input type="password" id="password" name="_password" required autocomplete="off"/>
+                                                        </div>
+
+                                                        <div class="forgot"><a href="mailto:support@graphoo.com">Forgot Password?</a></div>
+                                                        <div>
+
+
+                                                        </div>
+                                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                                                        <button class="button button-block">Sign In</button>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Library Section -->
+    <section id="whatsnew" class="content-section text-center">
+        <div class="container text-left">
+            <h3>Library</h3>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row text-left">
+                <ul>
+
+                        {% for chapter in chapters %}
+                            <ol>
+                                {{ chapter.bookTitle }}
+                            </ol>
+                        {%  endfor %}
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

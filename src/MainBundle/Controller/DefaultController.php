@@ -66,4 +66,15 @@ class DefaultController extends Controller
         $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findCurrentUser($user->getID());
         return $this->render("user/profile.html.twig", array('user' => $user, 'chapters' => $chapters));
     }
+
+
+    /**
+     *
+     * @Route("/library", name="library")
+     */
+    public function libraryAction()
+    {
+        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findAllBooks();
+        return $this->render(":default:library.html.twig",  ['chapters' => $chapters]);
+    }
 }

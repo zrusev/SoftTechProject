@@ -122,7 +122,8 @@
                                             </div>
                                         </div>
                                     </div>
-
+                            {% else %}
+                                <a class="btn btn-default btn-lg" href="{{ path('library') }}">OPEN LIBRARY</a>
                             {% endif %}
                         </div>
                     </div>
@@ -132,22 +133,28 @@
 
         <!-- Recent Section -->
         <section id="whatsnew" class="content-section text-center">
+            <div class="container text-center">
+                <h3>Recently added</h3>
+            </div>
+
             <div class="container-fluid">
                 <div class="row">
                      {% for chapter in chapters %}
                            {% if loop.index <= 6 %}
                                     <div class="col-sm-4 col-md-2">
                                         <ul class="thumbnails">
-                                              <li >
-                                                  <div class="thumbnail">
-                                                      <img src="{{ asset('uploads/covers/'~chapter.path) }}" class="img-fluid" alt="Responsive image">
-                                                      <div class="caption">
-                                                          <h3>{{ chapter.chapterTitle }}</h3>
-                                                          <p>{{ chapter.chapterTitle }}</p>
-                                                          <p align="center"><a href="{{ path('chapter_view', {'id': chapter.id}) }}" class="btn btn-primary btn-block">Read more</a></p>
+                                              <ol>
+                                                  <div>
+                                                      <div class="content-section-small">
+                                                        <img src="{{ asset('uploads/covers/'~chapter.path) }}" class="img-fluid" alt="Responsive image">
+                                                      </div>
+                                                      <div class="thumbnail">
+                                                          <h3>{{ chapter.bookTitle }}</h3>
+                                                          <h5>{{ chapter.chapterTitle }}</h5>
+                                                          <p align="center"><a href="{{ path('chapter_view', {'id': chapter.id}) }}" class="btn btn-default btn-block">Read more</a></p>
                                                       </div>
                                                   </div>
-                                              </li>
+                                              </ol>
                                         </ul>
 
                                     </div>
@@ -163,10 +170,6 @@
             <div class="download-section">
                 <div class="container">
                     <div class="col-lg-12">
-                        <h2>What is Graphoo?</h2>
-                        <p>Find thousands of books to read online. There are eBooks for everyone.</p>
-                        <p>Turn the pages to explore bygone eras, time-honored tales and historical narratives. Adventure awaits. Browse categories to find your favorite literature genres: Romance, Fantasy, Thriller, Short Stories, Young Adult and Children’s Books…</p>
-                        <p>Explore our most popular and critically acclaimed new and future book releases. Editors have selected some of the most exciting new titles to help you find your next great read. Check back here for regular updates, exclusive content from some of your favourite authors, and new recommendations.</p>
 
                     </div>
                 </div>

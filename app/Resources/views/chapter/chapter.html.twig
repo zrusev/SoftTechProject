@@ -1,24 +1,19 @@
 {% extends 'base.html.twig' %}
 
     {% block main %}
-        <section class="content-section">
 
+     <div class="download-section-wall">
+
+        <section class="content-section">
             <div class="container body-content">
                 <div class="row">
                     <div class="col-md-12">
                         <article>
                             <header>
-                                <div class="col-md-4">
-                                  <div class="thumbnail">
-                                      <img src="{{ asset('uploads/covers/'~chapter.path) }}"/>
-                                  </div>
-                                </div>
-                            </header>
-
                             <p>
                                 <h2>{{ chapter.bookTitle }}</h2>
                             </p>
-
+                            </header>
                             <p>
                                 {{ chapter.content|raw }}
                             </p>
@@ -82,4 +77,5 @@
                 </div>
             </div>
         </section>
+
     {% endblock %}
