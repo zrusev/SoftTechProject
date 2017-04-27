@@ -235,6 +235,11 @@ a:focus {
   padding-bottom: 100px; 
   background-color: rgba(92, 92, 92, 0.3);
 }
+.download-section-wall {
+  background: url(../img/bg3.jpg) repeat scroll;
+
+  
+}
 .download-section {
   width: 100%; 
   height: 100%; 
@@ -258,7 +263,7 @@ a:focus {
 	padding-bottom: 150px;
   }
   .download-section {
-    padding: 100px 0;
+    padding: 200px 0;
   }
   #map {
     height: 400px;
