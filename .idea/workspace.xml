@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91f82123-0ff3-484d-87ec-266b9d787a64" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,9 +101,9 @@
         <option value="$PROJECT_DIR$/app/Resources/views/chapter/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/ChapterController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/chapter/chapter.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
       </list>
     </option>
   </component>
@@ -119,8 +120,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1120" />
-    <option name="width" value="1448" />
+    <option name="x" value="956" />
+    <option name="width" value="1612" />
     <option name="height" value="1398" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -534,12 +535,12 @@
       <workItem from="1493113702412" duration="10735000" />
       <workItem from="1493129121494" duration="20898000" />
       <workItem from="1493190209579" duration="44784000" />
-      <workItem from="1493273811475" duration="21063000" />
+      <workItem from="1493273811475" duration="23067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210437000" />
+    <option name="totallyTimeSpent" value="212441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,10 +552,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1120" y="0" width="1448" height="1398" extended-state="0" />
+    <frame x="956" y="0" width="1612" height="1398" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22937062" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20577164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22521809" sideWeight="0.5022753" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -973,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/chapter/chapter.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="26" column="81" lean-forward="false" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
+        <state relative-caret-position="44">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#1062#1074#0#Twig" expanded="true" />
             <element signature="e#2915#2937#0#Twig" expanded="true" />
@@ -982,34 +983,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="142" column="71" lean-forward="false" selection-start-line="142" selection-start-column="71" selection-end-line="142" selection-end-column="78" />
-          <folding />
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#1773#1787#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="71" column="63" lean-forward="false" selection-start-line="71" selection-start-column="57" selection-end-line="71" selection-end-column="63" />
+        <state relative-caret-position="638">
+          <caret line="71" column="86" lean-forward="false" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
           <folding>
-            <element signature="e#2146#2160#0#Twig" expanded="true" />
-            <element signature="e#3160#3174#0#Twig" expanded="true" />
+            <element signature="e#1564#1572#0#Twig" expanded="true" />
+            <element signature="e#2200#2214#0#Twig" expanded="true" />
+            <element signature="e#2915#2923#0#Twig" expanded="true" />
+            <element signature="e#3079#3087#0#Twig" expanded="true" />
+            <element signature="e#3261#3275#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="65" lean-forward="false" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
-          <folding>
-            <element signature="e#131#139#0#Twig" expanded="true" />
-            <element signature="e#235#243#0#Twig" expanded="true" />
-            <element signature="e#2011#2025#0#Twig" expanded="true" />
-          </folding>
+        <state relative-caret-position="308">
+          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

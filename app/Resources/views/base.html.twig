@@ -29,16 +29,16 @@
 </head>
 
 <body id="{% block body_id %}{% endblock %}" data-spy="scroll" data-target=".navbar-fixed-top">
+<div id="page-top"></div>
 
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-            </button>
-            <a class="navbar-brand page-scroll" href="{{ path('homepage') }}">
-                <span class="light">GRAPHOOO</span>
-            </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"></button>
+                {% block top %}
+                    <a class="navbar-brand page-scroll" href="{{ path('homepage') }}"><span class="light">GRAPHOOO</span></a>
+                {% endblock %}
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,16 +60,16 @@
                     <a class="page-scroll" href="{{ path('security_logout') }}">LOG OUT</a>
                 </li>
                 {% else %}
-                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                <li class="hidden">
+                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                 <li class="hidden">
                     <a href="#page-top"></a>
-                </li>
+                 </li>
                     {% block li %}
                         <li>
-                            <a class="page-scroll" href="#whatsnew">WhAT'S NEW</a>
+                            <a class="page-scroll" href="{{ path('homepage') }}#whatsnew">WhAT'S NEW</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#about">WHY GRAPHOOO</a>
+                            <a class="page-scroll" href="{{ path('homepage') }}#about">WHY GRAPHOOO</a>
                         </li>
                     {% endblock %}
                 <li>
