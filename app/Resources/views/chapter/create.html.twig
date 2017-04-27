@@ -32,7 +32,7 @@
 
                                 <div class="form-group">
                                     <div class="container body-content span=8 offset=2">
-                                        <a class="btn btn-default" href="{{ path('homepage') }}">Cancel</a>
+                                        <a class="btn btn-default" href="{{ app.request.headers.get('referer') }}">Cancel</a>
                                         <button type="submit" class="btn btn-primary-submit">Submit</button>
                                     </div>
                                 </div>
