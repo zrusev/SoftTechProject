@@ -55,7 +55,38 @@ class User implements UserInterface
      */
     private $chapters;
 
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Role")
+     * @ORM\JoinTable(name="users_roles",
+     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")})
+     */
+    private $roles;
 
+
+    /**
+     * @param Chapter $chapter
+     * @return bool
+     */
+    public function isAuthor($chapter)
+    {
+        return $chapter->getAuthorId() == $this->getId();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return in_array("ROLE_ADMIN", $this->getRoles());
+    }
+
+    /**
+     * @param Chapter $chapter
+     * @return User
+     */
     public function addChapter(Chapter $chapter)
     {
         $this->chapters[] = $chapter;
@@ -153,6 +184,16 @@ class User implements UserInterface
         return $this->password;
     }
 
+    /**\
+     * @param Role $role
+     * @return User
+     */
+    public function  addRole($role)
+    {
+        $this->roles[] = $role;
+        return $this;
+    }
+
     /**
      * Returns the roles granted to the user.
      *
@@ -171,7 +212,14 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        $stringRoles = [];
+        foreach ($this->roles as $role)
+        {
+            /** @var $role Role */
+            $stringRoles[]= $role->getRole();
+        }
+
+        return $stringRoles;;
     }
 
     /**
@@ -211,6 +259,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->chapters = new ArrayCollection();
+        $this->roles = new ArrayCollection();
     }
 
     function __toString()

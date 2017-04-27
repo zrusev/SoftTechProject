@@ -85,7 +85,11 @@ class ChapterController extends Controller
             return $this->redirectToRoute("homepage");
         }
 
-
+        $user = $this->getUser();
+        if(!$user->isAuthor($chapter) && !$user->isAdmin())
+        {
+            return $this->redirectToRoute('chapter_view', ['id'=> $chapter->getId()]);
+        }
 
         $form = $this->createForm(ChapterType::class, $chapter);
 
@@ -114,6 +118,12 @@ class ChapterController extends Controller
     public function  confirmDelete($id)
     {
         $chapter = $this->getDoctrine()->getRepository(Chapter::class)->find($id);
+
+        $user = $this->getUser();
+        if(!$user->isAuthor($chapter) && !$user->isAdmin())
+        {
+            return $this->redirectToRoute('chapter_view', ['id'=> $chapter->getId()]);
+        }
 
         if($chapter != null)
         {

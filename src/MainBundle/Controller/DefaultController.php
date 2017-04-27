@@ -3,6 +3,7 @@
 namespace MainBundle\Controller;
 
 use MainBundle\Entity\Chapter;
+use MainBundle\Entity\Role;
 use MainBundle\Entity\User;
 use MainBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -38,6 +39,9 @@ class DefaultController extends Controller
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
+
+            $role = $this->getDoctrine()->getRepository(Role::class)->findOneBy(['name' => 'ROLE_USER']);
+            $user->addRole($role);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);

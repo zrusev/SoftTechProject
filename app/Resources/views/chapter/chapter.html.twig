@@ -21,6 +21,7 @@
 
                             <footer>
                                 <tr>
+                                    {% if app.getUser() and (app.getUser().isAuthor(chapter) or app.getUser().isAdmin()) %}
                                     <th>
                                         <div class="pull-left">
                                             <a class="btn btn-default btn-xs" href="{{ path('chapter_edit', {id: chapter.id}) }}">Edit</a>
@@ -40,7 +41,7 @@
                                                                 </li>
                                                             </ul>
                                                             <div class="modal-body">
-                                                                Are you sure you would like to delete this chapter?
+                                                                <p>Are you sure you would like to delete this chapter?</p>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <ul class="tab-group">
@@ -60,9 +61,10 @@
 
                                         </div>
                                     </th>
+                                    {% endif %}
                                     <th>
                                         <div class="pull-left">
-                                            <a class="btn btn-primary-submit btn-xs" href="{{ app.request.headers.get('referer') }}">back </a>
+                                            <a class="btn btn-primary-submit btn-xs" href="{{ app.request.headers.get('referer') }}">go back</a>
                                         </div>
                                     </th>
                                 <tr>
