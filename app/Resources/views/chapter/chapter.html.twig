@@ -8,8 +8,16 @@
                     <div class="col-md-12">
                         <article>
                             <header>
-                                <h2>{{ chapter.bookTitle }}</h2>
+                                <div class="col-md-4">
+                                  <div class="thumbnail">
+                                      <img src="{{ asset('uploads/covers/'~chapter.path) }}"/>
+                                  </div>
+                                </div>
                             </header>
+
+                            <p>
+                                <h2>{{ chapter.bookTitle }}</h2>
+                            </p>
 
                             <p>
                                 {{ chapter.content|raw }}
@@ -46,10 +54,10 @@
                                                             <div class="modal-footer">
                                                                 <ul class="tab-group">
                                                                     <li>
-                                                                        <a class="btn btn-default btn-xs" href="{{ path('chapter_confirm_delete', {id: chapter.id}) }}">YES</a>
+                                                                        <a class="btn btn-default-submit btn-xs" href="{{ path('chapter_confirm_delete', {id: chapter.id}) }}">YES</a>
                                                                     </li>
                                                                     <li>
-                                                                        <a class="btn btn-primary-submit btn-xs" data-dismiss="modal">NO</a>
+                                                                        <a class="btn btn-default btn-xs" data-dismiss="modal">NO</a>
                                                                     </li>
                                                                 </ul>
                                                             </div>

@@ -134,34 +134,25 @@
         <section id="whatsnew" class="content-section text-center">
             <div class="container-fluid">
                 <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <h2>Recently released</h2>
-                        </div>
-                        <div class="col-lg-12">
+                     {% for chapter in chapters %}
+                           {% if loop.index <= 6 %}
+                                    <div class="col-sm-4 col-md-2">
+                                        <ul class="thumbnails">
+                                              <li >
+                                                  <div class="thumbnail">
+                                                      <img src="{{ asset('uploads/covers/'~chapter.path) }}" class="img-fluid" alt="Responsive image">
+                                                      <div class="caption">
+                                                          <h3>{{ chapter.chapterTitle }}</h3>
+                                                          <p>{{ chapter.chapterTitle }}</p>
+                                                          <p align="center"><a href="{{ path('chapter_view', {'id': chapter.id}) }}" class="btn btn-primary btn-block">Read more</a></p>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                        </ul>
 
-                             {% for chapter in chapters %}
-                                 {% if loop.index <= 6 %}
-                                      <div class="col-lg-4 col-md-6 col-xs-6 thumb">
-                                           <div class="thumbnail">
-                                               <header>
-                                                   {{ chapter.bookTitle }}
-                                                </header>
-                                                <p>
-                                                {{ chapter.chapterTitle }}
-                                                </p>
-                                                <small class="autor">
-                                                    by {{ chapter.author }}
-                                                </small>
-                                                <footer>
-                                                <div class="pull-right">
-                                                     <a class="btn btn-default btn-xs" href="{{ path('chapter_view', {'id': chapter.id}) }}">Read more</a>
-                                                </div>
-                                                </footer>
-                                           </div>
-                                      </div>
-                                 {% endif %}
-                             {% endfor %}
-                        </div>
+                                    </div>
+                           {% endif %}
+                     {% endfor %}
                 </div>
             </div>
         </section>

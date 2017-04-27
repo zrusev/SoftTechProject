@@ -39,6 +39,9 @@ class ChapterController extends Controller
 
             $chapter->setAuthor($this->getUser());
             $em = $this->getDoctrine()->getManager();
+
+            $chapter->upload();
+
             $em->persist($chapter);
             $em->flush();
 
@@ -88,7 +91,7 @@ class ChapterController extends Controller
         $user = $this->getUser();
         if(!$user->isAuthor($chapter) && !$user->isAdmin())
         {
-            return $this->redirectToRoute('chapter_view', ['id'=> $chapter->getId()]);
+            return $this->redirectToRoute("homepage");
         }
 
         $form = $this->createForm(ChapterType::class, $chapter);

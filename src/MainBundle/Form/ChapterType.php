@@ -14,7 +14,8 @@ class ChapterType extends AbstractType
         $builder
             ->add('bookTitle', TextType::class)
             ->add('chapterTitle', TextType::class)
-            ->add('content', TextType::class);
+            ->add('content', TextType::class)
+            ->add('file');
     }
 
     public function configureOptions(OptionsResolver $resolver)
