@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+    {% block main %}
+
+        <section class="content-section">
+
+            <div class="container body-content span=8 offset=2">
+                <div class=class="container">
+                    <div class="row text-left">
+
+                        <form class="form-horizontal" action="{{ path('chapter_edit', {id: chapter.id}) }}" method="POST">
+                            <fieldset>
+                                <legend><a>Edit Chapter</a></legend>
+
+                                <div class="form-group">
+                                    <div class="col-sm-4 ">
+                                        <input type="text" class="form-control" id="bookTitle" placeholder="Title" name="chapter[bookTitle]" value="{{ chapter.bookTitle }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-6 ">
+                                        <input type="text" class="form-control" id="chapterTitle" placeholder="Chapter" name="chapter[chapterTitle]" value="{{ chapter.chapterTitle }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <textarea class="form-control"  rows="20" id="content" placeholder="Begin to write" name="chapter[content]">{{ chapter.content }}</textarea>
+                                    </div>
+                                </div>
+
+                                {{ form_row(form._token) }}
+
+                                <div class="form-group">
+                                    <div class="container body-content span=8 offset=2">
+                                        <a class="btn btn-default" href="{{ app.request.headers.get('referer') }}">Submit</a>
+                                        <button type="submit" class="btn btn-primary-submit">Cancel</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                CKEDITOR.replace( 'chapter[content]' );
+            </script>
+
+        </section>
+    {% endblock %}

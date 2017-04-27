@@ -50,6 +50,7 @@ class ChapterController extends Controller
 
     }
 
+
     /**
      * @param int $id
      *
@@ -64,5 +65,42 @@ class ChapterController extends Controller
         return $this->render('chapter/chapter.html.twig',
             array('chapter' => $chapter));
 
+    }
+
+
+    /**
+     * @Route("/chapter/edit/{id}", name="chapter_edit")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     *
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function  editChapter($id, Request $request)
+    {
+        $chapter = $this->getDoctrine()->getRepository(Chapter::class)->find($id);
+
+        if($chapter == null)
+        {
+            return $this->redirectToRoute("homepage");
+        }
+
+
+
+        $form = $this->createForm(ChapterType::class, $chapter);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+
+            $data = $this->getDoctrine()->getManager();
+            $data->persist($chapter);
+            $data->flush();
+
+            return $this->redirectToRoute('chapter_view', ['id'=> $chapter->getId()]);
+        }
+
+        return $this->render('chapter/edit.html.twig', ['chapter'=> $chapter, 'form' => $form->createView()]);
     }
 }

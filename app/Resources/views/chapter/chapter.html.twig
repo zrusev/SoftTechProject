@@ -20,9 +20,18 @@
                             </small>
 
                             <footer>
-                                <div class="pull-right">
-                                    <a class="btn btn-default btn-xs" href="{{ app.request.headers.get('referer') }}">back &raquo;</a>
-                                </div>
+                                <tr>
+                                    <th>
+                                        <div class="pull-left">
+                                            <a class="btn btn-default btn-xs" href="{{ path('chapter_edit', {id: chapter.id}) }}">Edit</a>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="pull-left">
+                                            <a class="btn btn-primary-submit btn-xs" href="{{ app.request.headers.get('referer') }}">back </a>
+                                        </div>
+                                    </th>
+                                <tr>
                             </footer>
                         </article>
                     </div>
