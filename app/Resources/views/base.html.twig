@@ -64,12 +64,14 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#whatsnew">WhAT'S NEW</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">WHY GRAPHOOO</a>
-                </li>
+                    {% block li %}
+                        <li>
+                            <a class="page-scroll" href="#whatsnew">WhAT'S NEW</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#about">WHY GRAPHOOO</a>
+                        </li>
+                    {% endblock %}
                 <li>
                     <a class="page-scroll" href="{{ path('security_login') }}">SIGN IN</a>
                 </li>
