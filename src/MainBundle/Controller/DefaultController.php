@@ -7,6 +7,7 @@ use MainBundle\Entity\User;
 use MainBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -51,4 +52,14 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig', ['chapters' => $chapters]);
     }
 
+    /**
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @Route("/profile", name="user_profile")
+     */
+    public function profileAction()
+    {
+        $user = $this->getUser();
+        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findCurrentUser($user->getID());
+        return $this->render("user/profile.html.twig", array('user' => $user, 'chapters' => $chapters));
+    }
 }

@@ -23,10 +23,8 @@ class UserController extends Controller
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
-
             $validator = $this->get('validator');
             $errors = $validator->validate($user);
             if (count($errors) > 0) {
@@ -34,33 +32,17 @@ class UserController extends Controller
                     'errors' => $errors,
                 ));
             }
-
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
-
             return $this->redirectToRoute('security_login');
         }
-
         return $this->render(
             'user/register.html.twig',
             array('form' => $form->createView())
         );
     }
-
-    /**
-     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
-     * @Route("/profile", name="user_profile")
-     */
-    public function profileAction()
-    {
-        $user = $this->getUser();
-        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findCurrentUser($user->getID());
-        return $this->render("user/profile.html.twig", array('user' => $user, 'chapters' => $chapters));
-    }
-
 }

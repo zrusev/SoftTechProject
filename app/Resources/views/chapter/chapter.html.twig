@@ -21,7 +21,7 @@
 
                             <footer>
                                 <div class="pull-right">
-                                    <a class="btn btn-default btn-xs" href="{{ path('homepage') }}">back &raquo;</a>
+                                    <a class="btn btn-default btn-xs" href="{{ app.request.headers.get('referer') }}">back &raquo;</a>
                                 </div>
                             </footer>
                         </article>
