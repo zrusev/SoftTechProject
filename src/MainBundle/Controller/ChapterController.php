@@ -103,4 +103,25 @@ class ChapterController extends Controller
 
         return $this->render('chapter/edit.html.twig', ['chapter'=> $chapter, 'form' => $form->createView()]);
     }
+
+
+    /**
+     * @Route("/article/confirm/{id}", name="chapter_confirm_delete")
+     *
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function  confirmDelete($id)
+    {
+        $chapter = $this->getDoctrine()->getRepository(Chapter::class)->find($id);
+
+        if($chapter != null)
+        {
+            $data = $this->getDoctrine()->getManager();
+            $data ->remove($chapter);
+            $data->flush();
+        }
+
+        return $this->redirectToRoute('user_profile');
+    }
 }
