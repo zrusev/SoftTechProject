@@ -137,29 +137,27 @@
             <div class="row">
                 <div class="col-md-12">
 
+                    <div class="container-fluid">
+                        <div class="text-left"><h1>LIBRARY</h1></div>
+                    </div>
 
-        <div class="container-fluid">
-            <div class="text-left">
-            <h1>
-                LIBRARY
-            </h1>
+                    {% for chapter in chapters %}
+                        <div class="container">
+                            <div class="col-md-5 col-md-offset-3">
+                                   <span >
+                                         <a href="{{ path('content_view', {title: chapter.bookTitle}) }}#whatsnew">{{ chapter.bookTitle }}</a>
+                                   </span>
+                            </div>
+
+                            <div class="col-md-2">
+                                    <span>
+                                         <div class="small"> by {{ chapter.author }}</div>
+                                    </span>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
             </div>
-        </div>
-
-
-            {% for chapter in chapters %}
-                <div class="container">
-               <div class=".col-sm-6">
-                <a href="{{ path('content_view', {title: chapter.bookTitle}) }}">{{ chapter.bookTitle }}</a>
-               </div>
-                <div class=".col-sm-6 col-md-6-offset">
-                        <div class="small">by {{ chapter.author }}</div>
-                </div>
-                </div>
-            {%  endfor %}
-            </div>
-
-                </div>
         </div>
 
     <!-- About Section -->

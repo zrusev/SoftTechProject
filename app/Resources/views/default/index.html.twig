@@ -123,7 +123,7 @@
                                         </div>
                                     </div>
                             {% else %}
-                                <a class="btn btn-default btn-lg" href="{{ path('library') }}">OPEN LIBRARY</a>
+                                <a class="btn btn-default btn-lg" href="{{ path('library') }}#whatsnew">OPEN LIBRARY</a>
                             {% endif %}
                         </div>
                     </div>
@@ -138,25 +138,24 @@
             </div>
 
             <div class="container-fluid">
-                <div class="row">
+                <div class="row bottom:0">
                      {% for chapter in chapters %}
                            {% if loop.index <= 6 %}
                                     <div class="col-sm-2 col-md-2">
                                         <ul class="thumbnails">
-                                              <ol>
-                                                  <div>
-                                                      <div class="content-section-small">
-                                                        <img src="{{ asset('uploads/covers/'~chapter.path) }}" class="img-fluid" alt="Responsive image">
-                                                      </div>
-                                                      <div class="thumbnail">
-                                                          <h3>{{ chapter.bookTitle }}</h3>
-                                                          <h5>{{ chapter.chapterTitle }}</h5>
-                                                          <p align="center"><a href="{{ path('chapter_view', {'id': chapter.id}) }}" class="btn btn-default btn-block">Read more</a></p>
-                                                      </div>
+                                             <div>
+                                                  <div class="content-section-small">
+                                                      {% if not asset('uploads/covers/'~chapter.path) is empty %}
+                                                          <img src="{{ asset('uploads/covers/'~chapter.path) }}" class="img-fluid" alt="Responsive image">
+                                                      {% endif %}
                                                   </div>
-                                              </ol>
+                                                  <div class="thumbnail">
+                                                        <h4>{{ chapter.bookTitle }}</h4>
+                                                        <h6>{{ chapter.chapterTitle }}</h6>
+                                                        <p align="center"><a href="{{ path('chapter_view', {'id': chapter.id}) }}" class="btn btn-default btn-block">Read more</a></p>
+                                                  </div>
+                                             </div>
                                         </ul>
-
                                     </div>
                            {% endif %}
                      {% endfor %}
@@ -164,7 +163,7 @@
             </div>
         </section>
 
-    <div class="container-fluid text-center"><button class="btn btn-default btn-lg"><a href="{{ path('library') }}">OPEN LIBRARY</a></button></div>
+    <div class="container-fluid text-center"><button class="btn btn-default btn-lg"><a href="{{ path('library') }}#whatsnew">OPEN LIBRARY</a></button></div>
 
 
         <!-- About Section -->

@@ -5015,7 +5015,7 @@ a.badge:focus {
 .thumbnail {
   display: block;
   padding: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   line-height: 1.42857143;
   background-color: transparent;
   

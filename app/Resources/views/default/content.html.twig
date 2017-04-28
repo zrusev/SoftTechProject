@@ -32,7 +32,6 @@
                             </p>
                         </div>
 
-
                         {% if not app.user %}
                             <button class="btn btn-default btn-lg" data-target="#loginModal" data-toggle="modal">TRY GRAPHOO</button>
 
@@ -123,7 +122,8 @@
                                     </div>
                                 </div>
                             </div>
-
+                        {% else %}
+                            <div class="container-fluid text-center"><button class="btn btn-default btn-lg"><a href="{{ path('library') }}#whatsnew">OPEN LIBRARY</a></button></div>
                         {% endif %}
                     </div>
                 </div>
@@ -133,24 +133,24 @@
 
     <!-- Library Section -->
     <section id="whatsnew" class="content-section">
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-md-12">
 
-        <div class="container-fluid">
-            <div class="text-center">
-                <h1>
+                    <div class="container-fluid">
+                        <div class="text-left"><h1>Table of Content</h1></div>
+                    </div>
 
-                </h1>
-                <h3>
-                    TABLE OF CONTENT
-                </h3>
-            </div>
-        </div>
 
-        <div class="col-md-3 col-md-offset-1">
             {% for chapter in chapters %}
-                <ul>
-                    <a class="dropdown-item" tabindex="-1" href="{{ path('chapter_view', {id: chapter.id}) }}">{{ chapter.chapterTitle }}</a>
-                </ul>
+                    <div class="container-fluid col-md-12 text-center">
+                         <span >
+                             <a class="dropdown-item" tabindex="-1" href="{{ path('chapter_view', {id: chapter.id}) }}">>>> {{ chapter.chapterTitle }} <<<</a>
+                         </span>
+                    </div>
             {%  endfor %}
+                </div>
+            </div>
         </div>
     </section>
 

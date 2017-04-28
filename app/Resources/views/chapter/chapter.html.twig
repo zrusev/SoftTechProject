@@ -10,9 +10,8 @@
                     <div class="col-md-12">
                         <article>
                             <header>
-                            <p>
                                 <h2>{{ chapter.bookTitle }}</h2>
-                            </p>
+                                <h4>{{ chapter.chapterTitle }}</h4>
                             </header>
                             <p>
                                 {{ chapter.content|raw }}
@@ -23,16 +22,13 @@
                             </small>
 
                             <footer>
-                                <tr>
+
                                     {% if app.getUser() and (app.getUser().isAuthor(chapter) or app.getUser().isAdmin()) %}
-                                    <th>
-                                        <div class="pull-left">
-                                            <a class="btn btn-default btn-xs" href="{{ path('chapter_edit', {id: chapter.id}) }}">Edit</a>
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div class="pull-left">
-                                            <button class="btn btn-default btn-xs" data-target="#deleteModal" data-toggle="modal">DELETE</button>
+                                    <div class="col-sm-1">
+                                        <a class="btn btn-default btn-lg" href="{{ path('chapter_edit', {id: chapter.id}) }}">Edit</a>
+                                    </div>
+                                    <div class="col-sm-1">
+                                            <button class="btn btn-default btn-lg" data-target="#deleteModal" data-toggle="modal">DELETE</button>
 
                                             <div class="modal fade" tabindex="-1" id="deleteModal" data-keyboard="true" data-backdrop="static">
                                                 <div class="modal-dialog modal-lg">
@@ -61,16 +57,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                        </div>
-                                    </th>
+                                    </div>
                                     {% endif %}
-                                    <th>
-                                        <div class="pull-left">
-                                            <a class="btn btn-primary-submit btn-xs" href="{{ app.request.headers.get('referer') }}">go back</a>
-                                        </div>
-                                    </th>
-                                <tr>
+                                    <div class="col-sm-1 col-md-offset-11">
+                                         <a class="btn btn-primary-submit btn-lg" href="{{ app.request.headers.get('referer') }}">back</a>
+                                    </div>
                             </footer>
                         </article>
                     </div>

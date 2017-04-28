@@ -12,10 +12,10 @@
         <footer>
             {% if app.user %}
             <div class="pull-left">
-                <a class="btn btn-default btn-xs" href="{{ path('chapter_create') }}">back &raquo;</a>
+                <a class="btn btn-primary-submit btn-lg" href="{{ path('chapter_create') }}">back</a>
             </div>
             {% else %}
-                <a class="btn btn-primary-submit btn-xs" href="{{ app.request.headers.get('referer') }}">go back</a>
+                <a class="btn btn-primary-submit btn-lg" href="{{ app.request.headers.get('referer') }}">back</a>
             {% endif %}
         </footer>
         </div>
