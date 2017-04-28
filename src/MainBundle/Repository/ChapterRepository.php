@@ -35,9 +35,20 @@ class ChapterRepository extends \Doctrine\ORM\EntityRepository
     public function findAllBooks()
     {
         $qb = $this->createQueryBuilder('userArticles')
-            ->distinct('userArticles.bookTitle');
+            ->groupBy('userArticles.bookTitle')
+            ->orderBy('userArticles.bookTitle','ASC')
+            ->addOrderBy('userArticles.dateAdded', 'ASC');
         $query = $qb->getQuery();
         return $query->execute();
     }
 
+    public function findByTitle($title)
+    {
+        $qb = $this->createQueryBuilder('userArticles')
+            ->andWhere('userArticles.bookTitle = :searchTerm')
+            ->setParameter('searchTerm', $title)
+            ->groupBy('userArticles.chapterTitle');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }

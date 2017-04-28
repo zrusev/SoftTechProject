@@ -137,4 +137,6 @@ class ChapterController extends Controller
 
         return $this->redirectToRoute('user_profile');
     }
+
+
 }

@@ -75,6 +75,20 @@ class DefaultController extends Controller
     public function libraryAction()
     {
         $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findAllBooks();
-        return $this->render(":default:library.html.twig",  ['chapters' => $chapters]);
+        return $this->render("default/library.html.twig",  ['chapters' => $chapters]);
     }
+
+
+    /**
+     * @Route("/content/{title}", name="content_view")
+     *
+     */
+    public function viewContent($title)
+    {
+        $chapters = $this->getDoctrine()->getRepository(Chapter::class)->findByTitle($title);
+
+        return $this->render('default/content.html.twig',
+            array('chapters' => $chapters));
+    }
+
 }

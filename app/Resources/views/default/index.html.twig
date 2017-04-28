@@ -23,20 +23,20 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <p class="intro-text"><h1>Writers' friendly corner</h1>
-                            <h3>#LoveToRead
-                                <a href="#about" class="btn btn-circle page-scroll">
-                                    <i class="fa fa-angle-double-down animated"></i>
-                                </a>
-                            </h3>
-                            </p>
-
+                            <div class="intro-text">
+                                <h1>Writer's friendly corner</h1>
+                                <p>#LoveToRead
+                                    <a href="#about" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-angle-double-down animated"></i>
+                                    </a>
+                                </p>
+                            </div>
 
                             {% if not app.user %}
                                     <button class="btn btn-default btn-lg" data-target="#loginModal" data-toggle="modal">TRY GRAPHOO</button>
 
                                     <div class="modal fade" tabindex="-1" id="loginModal" data-keyboard="false" data-backdrop="static">
-                                        <div class="modal-dialog modal-lg">
+                                        <div class="modal-dialog modal-md">
                                             <div class="modal-body">
                                             <div class="form">
                                                 <ul class="tab-group">
@@ -141,7 +141,7 @@
                 <div class="row">
                      {% for chapter in chapters %}
                            {% if loop.index <= 6 %}
-                                    <div class="col-sm-4 col-md-2">
+                                    <div class="col-sm-2 col-md-2">
                                         <ul class="thumbnails">
                                               <ol>
                                                   <div>
@@ -163,6 +163,8 @@
                 </div>
             </div>
         </section>
+
+    <div class="container-fluid text-center"><button class="btn btn-default btn-lg"><a href="{{ path('library') }}">OPEN LIBRARY</a></button></div>
 
 
         <!-- About Section -->
