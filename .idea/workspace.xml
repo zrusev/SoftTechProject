@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f82123-0ff3-484d-87ec-266b9d787a64" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/default/library.html.twig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/chapter/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/chapter/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Controller/ChapterController.php" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/ChapterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Repository/ChapterRepository.php" afterPath="$PROJECT_DIR$/src/MainBundle/Repository/ChapterRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/vendor/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/chapter/validation.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/chapter/validation.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/grayscale.min.css" afterPath="$PROJECT_DIR$/web/css/grayscale.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.min.css" afterPath="$PROJECT_DIR$/web/css/style.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/vendor/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/vendor/bootstrap/css/bootstrap.min.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,25 +31,10 @@
     <favorites_list name="SoftTechProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="38" column="73" lean-forward="false" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
-              <folding>
-                <element signature="e#10214#10221#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>contact</find>
-      <find>forgot</find>
       <find>securitywindow</find>
       <find>reg</find>
       <find>{{ path</find>
@@ -83,6 +63,8 @@
       <find>whatsnew</find>
       <find>aut</find>
       <find>modal</find>
+      <find>back</find>
+      <find>log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,14 +92,12 @@
         <option value="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/Role.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/config/validation.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Form/ChapterType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/chapter/create.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/Chapter.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/chapter/validation.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/chapter/chapter.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/chapter/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/ChapterController.php" />
@@ -127,6 +107,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/library.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/chapter/validation.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
       </list>
     </option>
   </component>
@@ -562,12 +544,12 @@
       <workItem from="1493273811475" duration="51925000" />
       <workItem from="1493334878558" duration="1316000" />
       <workItem from="1493363674320" duration="282000" />
-      <workItem from="1493364018583" duration="17918000" />
+      <workItem from="1493364018583" duration="19088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260815000" />
+    <option name="totallyTimeSpent" value="261985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -750,13 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -876,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/chapter/validation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/chapter/create.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -904,37 +872,6 @@
         <state relative-caret-position="220">
           <caret line="10" column="106" lean-forward="false" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="106" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/ChapterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1364">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#71#0#PHP" expanded="true" />
-            <element signature="e#1113#1143#0#PHP" expanded="true" />
-            <element signature="e#1697#1713#1#PHP" expanded="true" />
-            <element signature="e#2297#2321#0#PHP" expanded="true" />
-            <element signature="e#2606#2633#0#PHP" expanded="true" />
-            <element signature="e#2920#2947#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,14 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/chapter/chapter.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/library.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -996,12 +925,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/chapter/chapter.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="69" column="44" lean-forward="false" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="144" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/ChapterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#71#0#PHP" expanded="true" />
+            <element signature="e#1113#1143#0#PHP" expanded="true" />
+            <element signature="e#1697#1713#1#PHP" expanded="true" />
+            <element signature="e#2297#2321#0#PHP" expanded="true" />
+            <element signature="e#2606#2633#0#PHP" expanded="true" />
+            <element signature="e#2920#2947#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/chapter/validation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="-180">
           <caret line="38" column="73" lean-forward="false" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
           <folding>
             <element signature="e#10214#10221#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="44" column="71" lean-forward="false" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
+          <folding>
+            <element signature="e#547#561#0#Twig" expanded="true" />
+            <element signature="e#1773#1781#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
